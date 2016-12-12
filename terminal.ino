@@ -1,3 +1,5 @@
+#define MAX_COMMAND_SIZE 5000
+
 void setup() {
   Serial.begin(9600);
   Serial.println("### Welcome to Serial Galileo Console ###");
@@ -6,14 +8,14 @@ void setup() {
 
 void loop() {
   if(Serial.available()){
-    char comando[2000];
+    char comando[MAX_COMMAND_SIZE];
     int i = 0;
-    while(Serial.available()){
+    
+    while(Serial.available() && i < MAX_COMMAND_SIZE){
       comando[i] = Serial.read();
-      i += 1;
 
-      if(comando[i-1] == '\r' || comando[i-1] == '\n'){
-        i -= 1;
+      if(comando[i] != '\r' && comando[i] != '\n'){
+        i += 1;
       }
     }
 
