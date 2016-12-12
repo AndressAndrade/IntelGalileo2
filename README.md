@@ -11,4 +11,4 @@ Latest Yocto* Poky Image (210 MB)
 
 Preparing your microSD card for Windows*, OS X*, and Linux*
 
-software.intel.com/en-us/iot/hardware/galileo/downloads#
+http://software.intel.com/en-us/iot/hardware/galileo/downloads#
